@@ -1,0 +1,55 @@
+//2521200038 Pedro Henrique da Costa Terra
+//2511200719 Bernardo Alves de Oliveira
+
+#include <iostream>
+#include <string>
+#include <locale>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "");  // Ativa o uso de acentos
+
+    // Declaração de variáveis
+    string nomeDoAlienigena;
+    int numeroDeAbducoes, abducoesRealizadas;
+    const int salarioFixo = 1000; // Salário fixo
+    float totalDeCreditos, comissaoTotal;
+    float taxaComissao = 0.0;
+
+    // Entrada de dados
+    cout << "Nome do alienígena: ";
+    cin.ignore();  // Limpa o buffer para permitir entrada com espaços
+    getline(cin, nomeDoAlienigena); // Permite entrada de nome com espaços
+
+    cout << "Meta de abduções: ";
+    cin >> numeroDeAbducoes;
+    cout << "Total de abduções realizadas: ";
+    cin >> abducoesRealizadas;
+
+    // Determinação da taxa de comissão
+    if (abducoesRealizadas >= 2 * numeroDeAbducoes) {
+        taxaComissao = 0.06;  // Comissão de 6%
+    } else if (abducoesRealizadas >= numeroDeAbducoes) {
+        taxaComissao = 0.03;  // Comissão de 3%
+    }
+
+    // Cálculo da comissão total
+    comissaoTotal = abducoesRealizadas * taxaComissao;
+
+    // Cálculo do salário final
+    totalDeCreditos = salarioFixo + comissaoTotal;
+
+    // Exibição dos resultados de forma clara
+    cout << "\n===================================" << endl;
+    cout << "Alienígena: " << nomeDoAlienigena << endl;
+    cout << "Meta de abduções: " << numeroDeAbducoes << endl;
+    cout << "Total de abduções realizadas: " << abducoesRealizadas << endl;
+    cout << "Taxa de comissão: " << taxaComissao * 100 << "%" << endl;
+    cout << "Comissão total: " << comissaoTotal << " créditos" << endl;
+    cout << "Salário final: " << totalDeCreditos << " créditos" << endl;
+    cout << "===================================\n" << endl;
+
+    system("pause");
+    return 0;
+}
