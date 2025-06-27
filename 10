@@ -1,0 +1,59 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL,"");  // Ativa o uso de acentos
+    // -------------------------------
+
+    int anosTrabalhados;
+    int salario;
+    char respostaFilhos; 
+    char respostaGestor; 
+    
+    cout << "Quantos anos o funcionário trabalha na empresa? ";
+    cin >> anosTrabalhados;
+
+    cout << "Qual é o salário base do funcionário? R$";
+    cin >> salario;
+
+    cout << "O funcionário tem filhos? (s/n): ";
+    cin >> respostaFilhos;
+
+    cout << "O funcionário é gestor? (s/n): ";
+    cin >> respostaGestor;
+
+    cout << "\n-------------------------------------" << endl;
+    cout << "Benefícios que o funcionário tem direito:" << endl;
+    cout << "-------------------------------------" << endl;
+
+    bool temBeneficio = false;
+
+    if (anosTrabalhados > 5 && salario < 3000.00) {
+        cout << "- Auxílio por tempo de casa e salário baixo." << endl;
+        temBeneficio = true;
+    }
+
+
+    if (respostaFilhos == 's' || respostaFilhos == 'S') {
+        cout << "- Adicional por ter filhos." << endl;
+        temBeneficio = true;
+    }
+
+   
+    if (respostaGestor == 's' || respostaGestor == 'S') {
+        cout << "- Bônus por ser gestor." << endl;
+        temBeneficio = true;
+    }
+
+    if (!temBeneficio) {
+        cout << "Nenhum benefício aplicável no momento." << endl;
+    }
+
+    cout << "-------------------------------------" << endl;
+
+
+    // -------------------------------
+    system("pause");
+    return 0;
+}
