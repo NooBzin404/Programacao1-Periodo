@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL,"");  // Ativa o uso de acentos
+    // -------------------------------
+    float nota; 
+
+    cout << "Digite a nota numérica: ";
+    cin >> nota;
+
+    // Lógica para determinar o conceito
+    if (nota >= 9.0 && nota <= 10.0) {
+        cout << "Conceito: A" << endl;
+    } else if (nota >= 8.0 && nota < 9.0) {
+        cout << "Conceito: B" << endl;
+    } else if (nota >= 7.0 && nota < 8.0) {
+        cout << "Conceito: C" << endl;
+    } else if (nota >= 6.0 && nota < 7.0) {
+        cout << "Conceito: D" << endl;
+    } else if (nota >= 0.0 && nota < 6.0) {
+        cout << "Conceito: F" << endl;
+    } else {
+        cout << "Nota inválida. Por favor, digite uma nota entre 0 e 10." << endl;
+    }
+
+
+    // -------------------------------
+    system("pause");
+    return 0;
+}
