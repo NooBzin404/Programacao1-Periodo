@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL,"");  // Ativa o uso de acentos
+    // -------------------------------
+
+
+    
+    bool clienteVIP;
+    double horasEstacionado;
+    char respostaVip;
+
+    cout << "O cliente é VIP? (s/n): ";
+    cin >> respostaVip;
+
+    clienteVIP = (respostaVip == 's' || respostaVip == 'S');
+
+    double valorTotal = 0.0;
+
+    
+    if (clienteVIP) {
+        valorTotal = 0.0; 
+        cout << "Cliente VIP: Estacionamento gratuito!" << endl;
+    } else {
+        cout << "Quantas horas o carro ficou estacionado? (ex: 1.5 para 1h30min): ";
+        cin >> horasEstacionado;
+
+        if (horasEstacionado <= 0) {
+            cout << "Tempo inválido. O valor é R$0.00." << endl;
+            valorTotal = 0.0;
+        } else if (horasEstacionado < 1) {
+            valorTotal = 5.0;
+            cout << "Menos de 1 hora estacionado." << endl;
+        } else if (horasEstacionado >= 1 && horasEstacionado <= 3) {
+            valorTotal = horasEstacionado * 3.0;
+            cout << "Estacionado entre 1 e 3 horas." << endl;
+        } else {
+            valorTotal = horasEstacionado * 2.0;
+            cout << "Estacionado mais de 3 horas (com desconto)." << endl;
+        }
+
+        cout << "Valor a pagar: R$" << valorTotal << endl;
+  }
+    // -------------------------------
+    system("pause");
+    return 0;
+}
