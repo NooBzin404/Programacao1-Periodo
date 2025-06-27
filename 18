@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL,"");  // Ativa o uso de acentos
+    // -------------------------------
+
+    int VALOR_HORA = 20.00;
+    string nomeFuncionario;
+    int horasTrabalhadas;
+    int salarioCalculado;
+    char continuar;
+
+    cout << "--- Calculadora de Salário de Funcionários ---" << endl;
+
+    do {
+        cout << "\nDigite o nome do funcionário: ";
+        cin.ignore(); 
+        getline(cin, nomeFuncionario); 
+
+        cout << "Digite as horas trabalhadas por " << nomeFuncionario << ": ";
+        cin >> horasTrabalhadas;
+
+        salarioCalculado = horasTrabalhadas * VALOR_HORA;
+
+        cout << "O salário de " << nomeFuncionario << " é: R$" << salarioCalculado << endl;
+
+        cout << "\nProcessar outro funcionário? (s/n): ";
+        cin >> continuar;
+        continuar = tolower(continuar);
+
+        system("cls");
+    
+        } while (continuar == 's');
+    cout << "\n--- Processamento de funcionários finalizado. ---" << endl;
+
+   
+
+
+    // -------------------------------
+    system("pause");
+    return 0;
+}
