@@ -1,0 +1,52 @@
+#include <iostream>
+using namespace std;
+#include <conio.c>
+
+
+
+
+int main()
+{
+
+setlocale(LC_ALL,"");  // Ativa o uso de acentos
+    // -------------------------------
+
+    int temp;
+    char continuar;
+
+    cout << "--- Classificador de Temperaturas ---" << endl;
+    cout << "Digite as temperaturas uma por uma." << endl;
+    
+    
+    do {
+        cout << "\nDigite uma temperatura: ";
+        cin >> temp;
+  
+         cout << "Temperatura de " << temp << "°C: ";
+
+        if (temp < 15.0) {
+            cout << "Frio" << endl;
+        } else if (temp >= 15.0 && temp <= 25.0) {
+            cout << "Agradável" << endl;
+        } else {
+            cout << "Quente" << endl;
+        }
+
+
+        cout << "Deseja classificar outra temperatura? (s/n): ";
+        cin >> continuar;
+        continuar = tolower(continuar);
+        
+        system("cls"); 
+    
+    } while (continuar == 's');
+    
+
+    cout << "\n--- Classificação Finalizada ---" << endl;
+   
+
+ 
+    // -------------------------------
+    system("pause");
+    return 0;
+}
