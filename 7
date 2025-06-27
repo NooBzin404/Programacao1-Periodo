@@ -1,0 +1,102 @@
+int main()
+{
+    setlocale(LC_ALL,"");  // Ativa o uso de acentos
+
+    char jogarNovamente;
+    int partidasJogadas = 0;
+    int jogada1, jogada2;
+    int j1=0, j2=0 , empate=0;
+    do {  
+    // -------------------------------
+    
+    
+    system("cls");
+    
+    cout << "Jogador 1, escolha: pedra(1), papél(2) ou tesoura(3):  ";
+    cin >> (jogada1);
+    
+    system("cls");
+    
+    cout << "Jogador 2, escolha: pedra(1), papél(2) ou tesoura(3):  ";
+    cin >> (jogada2); 
+    
+    system("cls");
+    
+    
+           //jogador 1 escolhe pedra
+        if (jogada1 == 1) {
+        if (jogada2 == 1) {
+        cout << "Empate! Ambos jogaram pedra." << endl;
+        empate++;
+            } else if (jogada2 == 2) {
+        cout << "Jogador 2 ganhou! Papel cobre pedra." << endl;
+        j2++;
+            } else {
+        cout << "Jogador 1 ganhou! Pedra quebra tesoura." << endl;
+        j1++;
+            }
+            } 
+            
+            //jogador 1 escolhe papel
+    else if (jogada1 == 2) {
+        if (jogada2 == 1) {
+        cout << "Jogador 1 ganhou! Papel cobre pedra." << endl;
+        j1++;
+            } else if (jogada2 == 2) {
+        cout << "Empate! Ambos jogaram papel." << endl;
+        empate++;
+            } else {
+        cout << "Jogador 2 ganhou! Tesoura corta papel." << endl;
+        j2++;
+            }
+            }     
+        
+             //jogador 1 escolhe tesoura
+    else if (jogada1 == 3) {
+        if (jogada2 == 1) {
+        cout << "jogador 2 ganhou! Pedra quebra tesoura." << endl;
+        j2++;
+            } else if (jogada2 == 2) {
+        cout << "Jogador 1 ganhou! Tesoura corta papel." << endl;
+        j1++;
+            } else {
+        cout << "Empate! Ambos jogaram tesoura." << endl;
+        empate++;
+            }
+            } else {
+            // Jogada inválida
+            cout << "Jogada inválida. Por favor, escolha 'pedra(1)', 'papel(2)' ou 'tesoura(3)'." << endl;
+            }
+        partidasJogadas++;   
+            
+        cout << "\n--- Placar Atual ---" << endl;
+        cout << "Vitórias Jogador 1: " << j1 << endl;
+        cout << "Vitórias Jogador 2: " << j2 << endl;
+        cout << "Empates: " << empate << endl;
+        cout << "Total de Partidas: " << partidasJogadas << endl;
+            
+            
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+        cout << "Deseja jogar novamente? (s/n): ";
+        cin >> jogarNovamente;
+
+        // Converte a resposta para minúscula para facilitar a comparação
+        
+           
+        
+        jogarNovamente = tolower(jogarNovamente);
+
+    } while (jogarNovamente == 's'); // O loop continua enquanto o usuário digitar 's'
+
+    cout << "\nObrigado por jogar! Total de partidas: " << partidasJogadas << endl;
+
+
+    
+
+
+
+    // -------------------------------
+    system("pause");
+    return 0;
+}
